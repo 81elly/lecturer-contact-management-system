@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title Edit Lecturer
+  body(style='margin: 0; padding: 0;')
+    header(style='background-color: black; color: white; text-align: center; padding: 10px;')
+      h1 Edit Lecturer
+    form(action=`/edit/${lecturer.id}` method='post' style='margin-bottom: 60px; text-align: center; font-size: 23px;')
+      label(for='name') Name:
+      input(type='text' id='name' name='name' required value=lecturer.name)
+      br
+      label(for='email') Email:
+      input(type='email' id='email' name='email' required value=lecturer.email)
+      br
+      label(for='phone') Phone:
+      input(type='text' id='phone' name='phone' value=lecturer.phone)
+      br
+      button(type='submit' style='background-color: green; color: white; font-size: 25px;') Update Lecturer
+
+    footer(style='background-color: black; color: white; position: fixed; bottom: 0; width: 100%; font-size: 18px; text-align: center; padding: 0px;')
+      p Copyright © 2024 Department of Computer Studies

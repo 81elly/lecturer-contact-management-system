@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title Lecturer Contact Management System
+  body(style='margin: 0; padding: 0;')
+    header(style='background-color: black; color: white; text-align: center; padding: 10px;')
+      h1 Lecturer Contact Management System
+    form(action='/add' method='post' style='margin-bottom: 60px; text-align: center; font-size: 23px;')
+      label(for='name') Name:
+      input(type='text' id='name' name='name' required)
+      br
+      label(for='email') Email:`
+      input(type='email' id='email' name='email' required)
+      br
+      label(for='phone') Phone:
+      input(type='text' id='phone' name='phone')
+      br
+      button(type='submit' style='background-color: green; color: white; font-size: 25px;') Add Lecturer
+
+    ul(style='list-style-type: none; padding: 5px; overflow-y: auto; max-height: 400px;')
+      each lecturer in lecturers
+        li(style='margin-bottom: 10px; font-size:25px;') #{lecturer.name} - #{lecturer.email} - #{lecturer.phone || 'N/A'}
+        span(style='margin-right: 10px;')
+        a(href=`/edit/${lecturer.id}`) Edit
+        span(style='margin-right:20px;')
+        a(href=`/delete/${lecturer.id}`) Delete
+
+    footer(style='background-color: black; color: white; width: 100%; font-size: 18px; text-align: center; padding: 10px;')
+      p Copyright © 2024 Department of Computer Studies

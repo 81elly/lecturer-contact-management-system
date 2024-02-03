@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title Lecturer Contact Information - Student View
+  body(style='margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh;')
+    header(style='background-color: black; color: white; text-align: center; padding: 10px;')
+      h1 Lecturer Contact Information - Student View
+      h2(style='margin: 10px 0;') BACHELOR OF ENGINEERING IN COMPUTER ENGINEERING
+      h2(style='margin: 10px 0;') SEMESTER 1 IN THIRD YEAR
+
+    main(style='flex-grow 1;')
+      ul(style='list-style-type: none; padding: 5px; overflow-y: auto; max-height: 400px;')
+        each lecturer in lecturers
+          li(style='margin-bottom: 10px; font-size:25px;') #{lecturer.name} - #{lecturer.email} - #{lecturer.phone || 'N/A'}
+
+    footer(style='background-color: black; color: white; width: 100%; font-size: 18px; text-align: center; padding: 10px; position: sticky; bottom: 0;')
+      p Copyright © 2024 Department of Computer Studies
